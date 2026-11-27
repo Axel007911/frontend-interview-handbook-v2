@@ -1,0 +1,20 @@
+{
+  "name": "frontend-interview-handbook",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/handbook.test.mjs",
+    "test:e2e": "playwright test",
+    "check:links": "node scripts/check-links.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "marked": "14.0.0",
+    "prismjs": "1.30.0"
+  }
+}

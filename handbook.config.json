@@ -1,0 +1,25 @@
+{
+  "title": "Frontend Interview Handbook",
+  "role": "Middle Frontend Developer",
+  "description": "Питання, відповіді й практичні завдання для співбесіди Middle Frontend Developer: JavaScript, TypeScript, React, Redux Toolkit, браузер, тестування та англійська.",
+  "lead": "Підготовка до співбесіди Middle Frontend Developer. Пояснення українською, відповіді англійською для тренування вголос, практичні завдання та інтерактивні приклади.",
+  "storageKey": "frontend-interview-handbook:v2",
+  "legacyStorageKeys": [
+    "frontend-interview-handbook:v1"
+  ],
+  "searchPlaceholder": "closure, useEffect, CORS…",
+  "repository": "https://github.com/Axel007911/frontend-interview-handbook",
+  "themeColor": "#3b5bdb",
+  "stableCounts": [
+    16,
+    12,
+    24,
+    15,
+    11,
+    13,
+    9,
+    12,
+    8,
+    10
+  ]
+}

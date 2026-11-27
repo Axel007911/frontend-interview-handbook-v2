@@ -1,0 +1,6 @@
+<h3>Демонстрація: оновлення стану за один клік</h3>
+<p class="demo-note">Кожна кнопка — один обробник із трьома викликами <code>setCount</code>. Порівняй результат.</p>
+<div class="demo-row"><code>setCount(count + 1)</code> × 3 <output data-count="value">0</output> <button type="button" data-step="value">Клік</button></div>
+<div class="demo-row"><code>setCount(prev =&gt; prev + 1)</code> × 3 <output data-count="function">0</output> <button type="button" data-step="function">Клік</button></div>
+<p class="demo-note" data-batch-log aria-live="polite"></p>
+<button type="button" data-reset-demo>Скинути</button>

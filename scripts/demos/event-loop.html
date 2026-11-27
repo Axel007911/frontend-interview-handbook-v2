@@ -1,0 +1,24 @@
+<h3>Event Loop крок за кроком</h3>
+<p class="demo-note">Обери приклад, спробуй передбачити вивід, а потім проходь кроками. Спрощена модель браузера: стек викликів, черга microtasks, черга tasks.</p>
+<div class="demo-row">
+<label>Приклад <select data-el-preset>
+<option value="0">Promise і setTimeout</option>
+<option value="1">async/await</option>
+<option value="2">Вкладені tasks і microtasks</option>
+</select></label>
+</div>
+<pre data-el-code aria-label="Код прикладу"></pre>
+<div class="demo-row">
+<button type="button" data-el-prev>← Назад</button>
+<button type="button" class="primary" data-el-next>Крок →</button>
+<button type="button" data-el-play>Програти</button>
+<button type="button" data-el-reset>Спочатку</button>
+<span class="demo-note" data-el-counter></span>
+</div>
+<p data-el-note aria-live="polite"></p>
+<div class="demo-grid">
+<div class="demo-panel"><h4>Call stack</h4><div data-el-stack></div></div>
+<div class="demo-panel"><h4>Microtasks</h4><div data-el-micro></div></div>
+<div class="demo-panel"><h4>Tasks</h4><div data-el-tasks></div></div>
+<div class="demo-panel"><h4>Console</h4><div data-el-out></div></div>
+</div>

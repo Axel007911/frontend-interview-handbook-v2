@@ -1,0 +1,13 @@
+<h3>JOIN наживо</h3>
+<p class="demo-note">Дві маленькі таблиці: у Іри немає замовлень, а замовлення 104 посилається на неіснуючого користувача 4. Обери тип з’єднання.</p>
+<div class="demo-grid" data-sql-sources></div>
+<div class="demo-row" role="radiogroup" aria-label="Тип JOIN" data-sql-types>
+<button type="button" class="primary" data-join="inner">INNER</button>
+<button type="button" data-join="left">LEFT</button>
+<button type="button" data-join="right">RIGHT</button>
+<button type="button" data-join="full">FULL OUTER</button>
+<button type="button" data-join="anti">LEFT … IS NULL</button>
+</div>
+<pre data-sql-query></pre>
+<div data-sql-result aria-live="polite"></div>
+<p class="demo-note" data-sql-note></p>

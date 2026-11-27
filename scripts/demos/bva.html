@@ -1,0 +1,10 @@
+<h3>Калькулятор класів еквівалентності та граничних значень</h3>
+<p class="demo-note">Задай допустимий діапазон числового поля, крок (точність) і метод. Калькулятор покаже класи та значення для перевірки.</p>
+<div class="demo-row">
+<label>Мінімум <input type="number" data-bva-min value="18" style="inline-size:7rem"></label>
+<label>Максимум <input type="number" data-bva-max value="65" style="inline-size:7rem"></label>
+<label>Крок <input type="number" data-bva-step value="1" min="0.0001" step="any" style="inline-size:6rem"></label>
+<label>Метод <select data-bva-mode><option value="2">2-value BVA</option><option value="3">3-value BVA</option></select></label>
+</div>
+<div data-bva-out aria-live="polite"></div>
+<div class="demo-row"><label>Перевір значення <input type="text" data-bva-check value="17.5" style="inline-size:8rem"></label> <span data-bva-verdict></span></div>

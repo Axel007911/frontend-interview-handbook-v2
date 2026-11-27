@@ -1,0 +1,14 @@
+<h3>Калькулятор specificity</h3>
+<p class="demo-note">Введи два селектори й подивись, який переможе за однакових інших умов каскаду (походження, <code>!important</code>, cascade layers).</p>
+<div class="demo-grid">
+<label>Селектор A<br><input type="text" data-spec-a value="#nav .item a:hover" spellcheck="false" style="inline-size:100%"></label>
+<label>Селектор B<br><input type="text" data-spec-b value="ul li.item.active > a" spellcheck="false" style="inline-size:100%"></label>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Селектор</th><th>ID</th><th>Класи, атрибути, псевдокласи</th><th>Типи, псевдоелементи</th></tr></thead><tbody data-spec-rows></tbody></table></div>
+<p data-spec-result aria-live="polite"></p>
+<div class="demo-row"><span class="demo-note">Спробуй:</span>
+<button type="button" data-spec-try=":where(#app) .btn|.btn">:where()</button>
+<button type="button" data-spec-try=":is(#id, .cls) p|.a.b.c p">:is()</button>
+<button type="button" data-spec-try="li:nth-child(2 of .item)|li.item.x">nth-child of</button>
+<button type="button" data-spec-try="a::before|a:hover">::before vs :hover</button>
+</div>

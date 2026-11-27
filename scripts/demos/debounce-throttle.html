@@ -1,0 +1,15 @@
+<h3>Debounce і throttle наживо</h3>
+<p class="demo-note">Рухай курсором або пальцем по полю (це події на кшталт <code>mousemove</code>/<code>scroll</code>) чи запусти серію подій. Кожна позначка — виклик обробника за останні 6 секунд.</p>
+<div class="pad" data-dt-pad tabindex="0" role="button" aria-label="Поле для генерації подій">Рухай тут · або натискай будь-яку клавішу, коли поле у фокусі</div>
+<div class="demo-row">
+<label>Затримка <output data-dt-delay-value>300 мс</output></label>
+<input type="range" min="100" max="1000" step="50" value="300" data-dt-delay aria-label="Затримка в мілісекундах" style="max-inline-size:16rem">
+<button type="button" data-dt-burst>Серія подій</button>
+<button type="button" data-dt-clear>Очистити</button>
+</div>
+<div class="timeline" aria-hidden="true">
+<div class="timeline-row" data-row="raw"><span>Події</span><div class="timeline-track"></div><output>0</output></div>
+<div class="timeline-row" data-row="debounce"><span>Debounce</span><div class="timeline-track"></div><output>0</output></div>
+<div class="timeline-row" data-row="throttle"><span>Throttle</span><div class="timeline-track"></div><output>0</output></div>
+</div>
+<p class="demo-note" data-dt-summary aria-live="polite">Debounce спрацьовує один раз після паузи. Throttle — не частіше ніж раз за інтервал (тут з leading і trailing викликом).</p>

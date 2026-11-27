@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="uk" data-palette="{{palette}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{description}}">
+<meta name="theme-color" content="{{themeColor}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='{{faviconColor}}'/%3E%3Cpath d='M9 11h14M9 16h9M9 21h11' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<title>{{title}}</title>
+<script data-key="{{storageKey}}">try{const s=JSON.parse(localStorage.getItem(document.currentScript.dataset.key))||{};document.documentElement.dataset.theme=s.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+<style>/* STYLE */</style>
+</head>
+<body>
+<!-- ICONS -->
+<a class="skip" href="#main">До матеріалу</a>
+<header class="top">
+<button id="menu" class="icon-btn menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Зміст">
+<svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+<a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text"><strong>{{title}}</strong><small>{{role}}</small></span></a>
+<div class="search-box" role="search">
+<svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+<label class="visually-hidden" for="search">Пошук</label>
+<input id="search" type="search" placeholder="{{searchPlaceholder}}" autocomplete="off" spellcheck="false">
+<kbd aria-hidden="true">/</kbd>
+</div>
+<div class="top-actions">
+<button id="help-btn" class="icon-btn" type="button" aria-label="Гарячі клавіші" title="Гарячі клавіші (?)"><svg class="icon" aria-hidden="true"><use href="#i-keyboard"/></svg></button>
+<button id="theme" class="icon-btn" type="button" aria-label="Змінити тему" title="Змінити тему"><svg class="icon theme-light" aria-hidden="true"><use href="#i-moon"/></svg><svg class="icon theme-dark" aria-hidden="true"><use href="#i-sun"/></svg></button>
+</div>
+<div class="progress-line" aria-hidden="true"><i id="progress-bar"></i></div>
+</header>
+<div class="layout">
+<div class="backdrop" id="backdrop" hidden></div>
+<aside id="sidebar" class="sidebar" aria-label="Зміст і режими">
+<p class="side-label" id="mode-label">Режим</p>
+<div class="mode-switch" role="radiogroup" aria-labelledby="mode-label">
+<label title="Пояснення відкриті одразу"><input type="radio" name="mode" value="study" checked><span>Навчання</span></label>
+<label title="Відповіді приховані, оцінюєш себе"><input type="radio" name="mode" value="interview"><span>Співбесіда</span></label>
+<label title="Лише закладки та «Повторити»"><input type="radio" name="mode" value="revision"><span>Повторення</span></label>
+</div>
+<p id="results" class="results" role="status"></p>
+<nav id="toc" aria-label="Зміст">
+<a class="toc-link" href="#home">Огляд</a>
+<!-- TOC -->
+<a class="toc-link" href="#checklist">Чекліст підготовки</a>
+</nav>
+</aside>
+<main id="main" tabindex="-1">
+
+<section id="home" class="view">
+<div class="hero">
+<p class="eyebrow">{{role}} · {{questions}} питань · {{tasks}} задач</p>
+<h1 tabindex="-1">{{title}}</h1>
+<p class="lead">{{lead}}</p>
+<div class="hero-actions">
+<a class="button primary" id="start-link" href="#{{firstId}}">Почати з розділу «{{firstChapter}}»</a>
+<a class="button" id="continue-link" href="#{{firstId}}" hidden>Продовжити</a>
+<button class="button" type="button" data-random><svg class="icon" aria-hidden="true"><use href="#i-shuffle"/></svg>Випадкове питання</button>
+</div>
+</div>
+<ul class="stats" aria-label="Прогрес">
+<li><strong id="stat-done">0</strong><span>вивчено з {{total}}</span></li>
+<li class="stat-review"><strong id="stat-review">0</strong><span>потрібно повторити</span></li>
+<li class="stat-bookmark"><strong id="stat-bookmarks">0</strong><span>у закладках</span></li>
+<li><strong id="stat-checklist">0</strong><span>пунктів чекліста</span></li>
+</ul>
+<h2>Розділи</h2>
+<ul class="chapter-grid"><!-- CHAPTERS --></ul>
+<h2>Як працювати з посібником</h2>
+<ul class="how-grid">
+<li><strong>Навчання</strong><span>Пояснення відкриті одразу. Розв’язки задач — після власної спроби.</span></li>
+<li><strong>Співбесіда</strong><span>Відповідь прихована. Відповідай уголос англійською, відкрий і оціни себе: «Знаю» або «Повторити».</span></li>
+<li><strong>Повторення</strong><span>У змісті лишаються тільки закладки й картки «Повторити». Пошук звужує добірку.</span></li>
+</ul>
+<p class="hint">Під кожною англомовною відповіддю є кнопка «Озвучити», щоб послухати вимову. Приклади з позначкою «можна запустити» виконуються просто на сторінці. <button class="link-btn" type="button" data-open-help>Гарячі клавіші</button></p>
+<details class="visual-index"><summary>Схеми, демо та код, який можна запустити <span class="pill">{{visuals}}</span></summary>
+<!-- VISUAL INDEX -->
+</details>
+<div class="guide">
+<!-- GUIDE -->
+</div>
+<section class="data-panel" aria-labelledby="data-title">
+<h2 id="data-title">Твій прогрес</h2>
+<p>Статуси, закладки й чекліст зберігаються лише в цьому браузері. Збережи файл, щоб перенести прогрес на інший пристрій.</p>
+<div class="data-actions">
+<button type="button" class="button" id="export">Зберегти прогрес у файл</button>
+<label class="button file-btn">Завантажити з файлу<input type="file" id="import" accept="application/json,.json"></label>
+<button type="button" class="button danger" id="reset">Скинути прогрес</button>
+</div>
+</section>
+</section>
+
+<section id="checklist" class="view" hidden>
+<h1 tabindex="-1">Чекліст підготовки</h1>
+<p id="check-progress" class="muted" role="status"></p>
+<div class="meter-line" aria-hidden="true"><i id="check-bar"></i></div>
+<!-- CHECKLIST -->
+<p><button id="copy-progress" class="button" type="button">Копіювати чекліст як текст</button></p>
+</section>
+
+<section id="reader" class="view" aria-label="Питання" hidden>
+<div class="reader-bar">
+<p class="crumbs"><span id="crumb-chapter"></span><span id="crumb-position"></span></p>
+<div class="q-actions">
+<div class="status-switch" role="radiogroup" aria-label="Статус картки">
+<label><input type="radio" name="status" value=""><span>Не вивчено</span></label>
+<label class="s-review"><input type="radio" name="status" value="review"><span>Повторити</span></label>
+<label class="s-done"><input type="radio" name="status" value="done"><span>Вивчено</span></label>
+</div>
+<button id="bookmark" class="icon-btn" type="button" aria-pressed="false" aria-label="Закладка" title="Закладка (B)"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button>
+<button id="share" class="icon-btn" type="button" aria-label="Копіювати посилання" title="Копіювати посилання"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></button>
+</div>
+</div>
+<!-- QUESTIONS -->
+<p id="interview-hint" class="hint interview-hint" hidden>Спершу відповідай уголос англійською 60–90 секунд, потім відкрий відповідь і порівняй.</p>
+<div id="grade" class="grade" hidden>
+<p>Як вийшло відповісти?</p>
+<button type="button" class="button" data-grade="review">Ще повторю</button>
+<button type="button" class="button primary" data-grade="done">Знаю, далі</button>
+</div>
+<nav class="pager" aria-label="Навігація між картками">
+<a id="prev" class="pager-link"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span><small>Попереднє</small><span class="pager-title"></span></span></a>
+<button type="button" class="icon-btn" data-random aria-label="Випадкове питання" title="Випадкове питання (R)"><svg class="icon" aria-hidden="true"><use href="#i-shuffle"/></svg></button>
+<a id="next" class="pager-link next"><span><small>Наступне</small><span class="pager-title"></span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+</nav>
+</section>
+
+<footer class="site-footer"><p>{{title}} · відкритий навчальний посібник · <a href="{{repository}}" target="_blank" rel="noopener noreferrer">GitHub</a></p></footer>
+<noscript><p>Для пошуку, прогресу та режимів увімкни JavaScript.</p></noscript>
+</main>
+</div>
+<dialog id="help" aria-labelledby="help-title">
+<form method="dialog"><header><h2 id="help-title">Гарячі клавіші</h2><button class="icon-btn" aria-label="Закрити"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></header>
+<table class="keys"><tbody>
+<tr><td><kbd>/</kbd></td><td>Пошук</td></tr>
+<tr><td><kbd>→</kbd> <kbd>J</kbd></td><td>Наступна картка</td></tr>
+<tr><td><kbd>←</kbd> <kbd>K</kbd></td><td>Попередня картка</td></tr>
+<tr><td><kbd>A</kbd></td><td>Показати або сховати відповідь</td></tr>
+<tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></td><td>Статус: не вивчено, повторити, вивчено</td></tr>
+<tr><td><kbd>B</kbd></td><td>Закладка</td></tr>
+<tr><td><kbd>S</kbd></td><td>Озвучити англійську відповідь</td></tr>
+<tr><td><kbd>R</kbd></td><td>Випадкова картка з добірки</td></tr>
+<tr><td><kbd>M</kbd></td><td>Перемкнути режим</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>Закрити пошук або меню</td></tr>
+</tbody></table></form>
+</dialog>
+<p id="toast" class="toast" role="status" aria-live="polite"></p>
+<script>
+const handbook = /* DATA */;
+const demoInits = {
+/* DEMOS */
+};
+/* CLIENT */
+</script>
+</body>
+</html>
